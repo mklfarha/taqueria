@@ -51,13 +51,13 @@
 # HTTPS for the HTTP ingress. cert-manager watches for the cluster-issuer
 # annotation, requests the certificate, and writes it into secretName.
 #
-# ingress:
-#   annotations:
-#     cert-manager.io/cluster-issuer: lets-encrypt
-#   tls:
-#     - secretName: taqueria-tls
-#       hosts:
-#         - your.domain.example
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt
+  tls:
+    - secretName: taqueria-api-tls
+      hosts:
+        - api.taqueriatracker.todes.mx
 #
 # TLS is not optional for gRPC — it is what makes gRPC work at all.
 # ingress-nginx enables HTTP/2 only on its TLS listener (`listen 443 ssl http2`;
