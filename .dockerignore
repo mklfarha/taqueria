@@ -1,0 +1,13 @@
+# nuzur deploy — keep git history, secrets, and artifacts out of the image
+.git
+.gitignore
+config/prod.yaml
+*.local.yaml
+.env
+.env.*
+*.key
+*.pem
+*.p12
+/bin/
+*.exe
+.DS_Store

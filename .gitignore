@@ -1,0 +1,11 @@
+# nuzur deploy — keep secrets and build artifacts out of git
+config/prod.yaml
+*.local.yaml
+.env
+.env.*
+*.key
+*.pem
+*.p12
+/bin/
+*.exe
+.DS_Store
