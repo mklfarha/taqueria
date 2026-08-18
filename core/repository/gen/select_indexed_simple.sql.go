@@ -138,7 +138,7 @@ func (q *Queries) FetchTacoByTaqueriaUUIDAndTipo(ctx context.Context, arg FetchT
 const fetchTaqueriaByID = `-- name: FetchTaqueriaByID :many
 
 
-SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `,` + "`" + `instagram` + "`" + `
 FROM ` + "`" + `taqueria` + "`" + `
 WHERE 
     ` + "`" + `id` + "`" + ` = ?
@@ -162,6 +162,7 @@ func (q *Queries) FetchTaqueriaByID(ctx context.Context, id string) ([]Taqueria,
 			&i.Especialidad,
 			&i.CreatedAt,
 			&i.UpdatedAt,
+			&i.Instagram,
 		); err != nil {
 			return nil, err
 		}
@@ -177,7 +178,7 @@ func (q *Queries) FetchTaqueriaByID(ctx context.Context, id string) ([]Taqueria,
 }
 
 const fetchTaqueriaByIDForUpdate = `-- name: FetchTaqueriaByIDForUpdate :many
-SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `,` + "`" + `instagram` + "`" + `
 FROM ` + "`" + `taqueria` + "`" + `
 WHERE 
     ` + "`" + `id` + "`" + ` = ? 
@@ -200,6 +201,7 @@ func (q *Queries) FetchTaqueriaByIDForUpdate(ctx context.Context, id string) ([]
 			&i.Especialidad,
 			&i.CreatedAt,
 			&i.UpdatedAt,
+			&i.Instagram,
 		); err != nil {
 			return nil, err
 		}
@@ -215,7 +217,7 @@ func (q *Queries) FetchTaqueriaByIDForUpdate(ctx context.Context, id string) ([]
 }
 
 const fetchTaqueriaByName = `-- name: FetchTaqueriaByName :many
-SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `,` + "`" + `instagram` + "`" + `
 FROM ` + "`" + `taqueria` + "`" + `
 WHERE 
     ` + "`" + `name` + "`" + ` = ? 
@@ -244,6 +246,7 @@ func (q *Queries) FetchTaqueriaByName(ctx context.Context, arg FetchTaqueriaByNa
 			&i.Especialidad,
 			&i.CreatedAt,
 			&i.UpdatedAt,
+			&i.Instagram,
 		); err != nil {
 			return nil, err
 		}

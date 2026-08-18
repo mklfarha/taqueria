@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS `taqueria` (
     `especialidad` INT NOT NULL,
     `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `instagram` VARCHAR(512),
     PRIMARY KEY (`id`),
     UNIQUE INDEX `uq_taqueria_name` (`name`)
 ) ENGINE = InnoDB;

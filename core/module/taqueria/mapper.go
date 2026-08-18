@@ -8,6 +8,7 @@ import (
 
 	"taqueria/entity/mapper"
 
+	"github.com/guregu/null/v6"
 	"taqueria/enums"
 )
 
@@ -27,5 +28,6 @@ func mapModelToEntity(m taqueriadb.Taqueria) main_entity.Taqueria {
 		Especialidad: enums.TipoTaco(m.Especialidad),
 		CreatedAt:    m.CreatedAt,
 		UpdatedAt:    m.UpdatedAt,
+		Instagram:    null.NewString(m.Instagram.String, m.Instagram.Valid),
 	}
 }

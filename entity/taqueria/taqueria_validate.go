@@ -34,6 +34,10 @@ func (e Taqueria) Validate() error {
 		c.Field("taqueria.especialidad", validation.EnumMember(e.Especialidad.ToInt64(), []int64{0, 1, 2, 3, 4, 5, 6, 7, 8}, "tipo_taco"))
 
 	}
+	if e.Instagram.Valid && e.Instagram.String != "" {
+		c.Field("taqueria.instagram", validation.URL(e.Instagram.String, false, nil, nil, nil))
+
+	}
 
 	return c.Result()
 }

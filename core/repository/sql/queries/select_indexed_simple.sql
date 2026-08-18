@@ -3,21 +3,21 @@
 
 -- taqueria selects:
 -- name: FetchTaqueriaByID :many
-SELECT `id`,`name`,`colonia`,`especialidad`,`created_at`,`updated_at`
+SELECT `id`,`name`,`colonia`,`especialidad`,`created_at`,`updated_at`,`instagram`
 FROM `taqueria`
 WHERE 
     `id` = ? ;
 
         
 -- name: FetchTaqueriaByName :many
-SELECT `id`,`name`,`colonia`,`especialidad`,`created_at`,`updated_at`
+SELECT `id`,`name`,`colonia`,`especialidad`,`created_at`,`updated_at`,`instagram`
 FROM `taqueria`
 WHERE 
     `name` = ? 
 LIMIT ?, ?;
         
 -- name: FetchTaqueriaByIDForUpdate :many
-SELECT `id`,`name`,`colonia`,`especialidad`,`created_at`,`updated_at`
+SELECT `id`,`name`,`colonia`,`especialidad`,`created_at`,`updated_at`,`instagram`
 FROM `taqueria`
 WHERE 
     `id` = ? 

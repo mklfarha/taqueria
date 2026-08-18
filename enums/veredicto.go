@@ -87,7 +87,7 @@ func VeredictoSliceToJSON(in []Veredicto) json.RawMessage {
 	return jr
 }
 
-func JSONToVeredictoSlice(in json.RawMessage) []Veredicto {
+func JSONToVeredictoSlice(in []byte) []Veredicto {
 	res := []int64{}
 	// an absent column (NULL / empty / JSON null) is not a decode failure
 	if len(in) == 0 || string(in) == "null" {

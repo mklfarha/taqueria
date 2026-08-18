@@ -8,6 +8,6 @@ type: application
 # Bump on every release. Two things depend on it: the publish workflow reads it
 # back to name the packaged .tgz, and the chart version is stamped into the pod
 # template labels — so bumping it is what rolls the pods.
-version: 0.1.0
+version: 0.1.1
 
-appVersion: "0.1.0"
+appVersion: "0.1.1"

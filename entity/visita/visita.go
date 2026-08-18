@@ -35,7 +35,10 @@ func (e Visita) PrimaryKeyValues() []string {
 	}
 }
 
-func VisitaFromJSON(data json.RawMessage) Visita {
+// The parameter is a plain []byte rather than json.RawMessage so that both a
+// json.RawMessage and the mapper.JSON a repository model holds can be passed
+// without a conversion at the call site.
+func VisitaFromJSON(data []byte) Visita {
 	entity := Visita{}
 	if data == nil {
 		return entity
@@ -52,7 +55,7 @@ func VisitaFromJSON(data json.RawMessage) Visita {
 	return entity
 }
 
-func VisitaSliceFromJSON(data json.RawMessage) []Visita {
+func VisitaSliceFromJSON(data []byte) []Visita {
 	entity := []Visita{}
 	if data == nil {
 		return entity

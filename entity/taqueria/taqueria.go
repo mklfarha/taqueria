@@ -7,6 +7,7 @@ import (
 	"log"
 
 	"github.com/gofrs/uuid"
+	"github.com/guregu/null/v6"
 	"taqueria/enums"
 	"time"
 
@@ -20,6 +21,7 @@ type Taqueria struct {
 	Especialidad enums.TipoTaco `json:"especialidad"`
 	CreatedAt    time.Time      `json:"created_at"`
 	UpdatedAt    time.Time      `json:"updated_at"`
+	Instagram    null.String    `json:"instagram"`
 }
 
 func (e Taqueria) String() string {
@@ -33,7 +35,10 @@ func (e Taqueria) PrimaryKeyValues() []string {
 	}
 }
 
-func TaqueriaFromJSON(data json.RawMessage) Taqueria {
+// The parameter is a plain []byte rather than json.RawMessage so that both a
+// json.RawMessage and the mapper.JSON a repository model holds can be passed
+// without a conversion at the call site.
+func TaqueriaFromJSON(data []byte) Taqueria {
 	entity := Taqueria{}
 	if data == nil {
 		return entity
@@ -50,7 +55,7 @@ func TaqueriaFromJSON(data json.RawMessage) Taqueria {
 	return entity
 }
 
-func TaqueriaSliceFromJSON(data json.RawMessage) []Taqueria {
+func TaqueriaSliceFromJSON(data []byte) []Taqueria {
 	entity := []Taqueria{}
 	if data == nil {
 		return entity

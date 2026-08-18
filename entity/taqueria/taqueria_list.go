@@ -14,6 +14,7 @@ func (e Taqueria) FieldIdentifierToTypeMap() map[string]entitytypes.FieldType {
 		"especialidad": entitytypes.SingleEnumFieldType,
 		"created_at":   entitytypes.TimestampFieldType,
 		"updated_at":   entitytypes.TimestampFieldType,
+		"instagram":    entitytypes.StringFieldType,
 	}
 }
 
@@ -25,6 +26,7 @@ func (e Taqueria) OrderedFieldIdentifiers() []string {
 	res = append(res, "especialidad")
 	res = append(res, "created_at")
 	res = append(res, "updated_at")
+	res = append(res, "instagram")
 
 	return res
 }

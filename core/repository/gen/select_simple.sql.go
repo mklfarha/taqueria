@@ -45,7 +45,7 @@ func (q *Queries) FetchTaco(ctx context.Context) ([]Taco, error) {
 }
 
 const fetchTaqueria = `-- name: FetchTaqueria :many
-SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `
+SELECT ` + "`" + `id` + "`" + `,` + "`" + `name` + "`" + `,` + "`" + `colonia` + "`" + `,` + "`" + `especialidad` + "`" + `,` + "`" + `created_at` + "`" + `,` + "`" + `updated_at` + "`" + `,` + "`" + `instagram` + "`" + `
 FROM ` + "`" + `taqueria` + "`" + `
 `
 
@@ -66,6 +66,7 @@ func (q *Queries) FetchTaqueria(ctx context.Context) ([]Taqueria, error) {
 			&i.Especialidad,
 			&i.CreatedAt,
 			&i.UpdatedAt,
+			&i.Instagram,
 		); err != nil {
 			return nil, err
 		}

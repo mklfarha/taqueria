@@ -103,5 +103,7 @@ func mapUpsertRequestToUpdateParams(req types.UpsertRequest) taqueriadb.UpdateTa
 		CreatedAt: req.Taqueria.CreatedAt,
 
 		UpdatedAt: req.Taqueria.UpdatedAt,
+
+		Instagram: req.Taqueria.Instagram,
 	}
 }

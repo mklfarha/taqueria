@@ -33,7 +33,10 @@ func (e Taco) PrimaryKeyValues() []string {
 	}
 }
 
-func TacoFromJSON(data json.RawMessage) Taco {
+// The parameter is a plain []byte rather than json.RawMessage so that both a
+// json.RawMessage and the mapper.JSON a repository model holds can be passed
+// without a conversion at the call site.
+func TacoFromJSON(data []byte) Taco {
 	entity := Taco{}
 	if data == nil {
 		return entity
@@ -50,7 +53,7 @@ func TacoFromJSON(data json.RawMessage) Taco {
 	return entity
 }
 
-func TacoSliceFromJSON(data json.RawMessage) []Taco {
+func TacoSliceFromJSON(data []byte) []Taco {
 	entity := []Taco{}
 	if data == nil {
 		return entity

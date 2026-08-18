@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generator": "nuzur go-code-gen",
-  "generated_at": "2026-08-12T23:18:42Z",
+  "generated_at": "2026-08-18T22:47:24Z",
   "files": [
     ".github/workflows/publish-taqueria-helm.yaml",
     ".github/workflows/publish-taqueria-image.yaml",

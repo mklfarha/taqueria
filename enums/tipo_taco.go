@@ -107,7 +107,7 @@ func TipoTacoSliceToJSON(in []TipoTaco) json.RawMessage {
 	return jr
 }
 
-func JSONToTipoTacoSlice(in json.RawMessage) []TipoTaco {
+func JSONToTipoTacoSlice(in []byte) []TipoTaco {
 	res := []int64{}
 	// an absent column (NULL / empty / JSON null) is not a decode failure
 	if len(in) == 0 || string(in) == "null" {

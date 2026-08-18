@@ -112,6 +112,8 @@ func taqueriaDeclarations() *filtering.Declarations {
 		filtering.DeclareIdent("created_at", filtering.TypeTimestamp),
 
 		filtering.DeclareIdent("updated_at", filtering.TypeTimestamp),
+
+		filtering.DeclareIdent("instagram", filtering.TypeString),
 	)
 	if err != nil {
 		log.Printf("error creating declarations for taqueria: %v", err)

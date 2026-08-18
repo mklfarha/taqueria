@@ -2,7 +2,7 @@
 -- name: UpdateTaqueria :exec
 UPDATE `taqueria`
 SET
-`name` = ?, `colonia` = ?, `especialidad` = ?, `created_at` = ?, `updated_at` = ?
+`name` = ?, `colonia` = ?, `especialidad` = ?, `created_at` = ?, `updated_at` = ?, `instagram` = ?
 WHERE
 `id` = ?;
 

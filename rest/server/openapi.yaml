@@ -693,6 +693,10 @@ components:
                 id:
                     format: uuid
                     type: string
+                instagram:
+                    format: uri
+                    nullable: true
+                    type: string
                 name:
                     type: string
                 updated_at:

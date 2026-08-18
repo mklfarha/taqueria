@@ -20,12 +20,13 @@ type Taco struct {
 }
 
 type Taqueria struct {
-	ID           string    `json:"id"`
-	Name         string    `json:"name"`
-	Colonia      string    `json:"colonia"`
-	Especialidad int64     `json:"especialidad"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	ID           string      `json:"id"`
+	Name         string      `json:"name"`
+	Colonia      string      `json:"colonia"`
+	Especialidad int64       `json:"especialidad"`
+	CreatedAt    time.Time   `json:"created_at"`
+	UpdatedAt    time.Time   `json:"updated_at"`
+	Instagram    null.String `json:"instagram"`
 }
 
 type Visita struct {
