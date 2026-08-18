@@ -9,3 +9,6 @@ config/prod.yaml
 /bin/
 *.exe
 .DS_Store
+
+# nuzur deploy state — regenerated on every deploy, contains host/user details
+.nuzur/
